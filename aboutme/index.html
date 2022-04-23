@@ -28,7 +28,7 @@
 	<div class="textbx">
 		<h2><span>Tarun Kotagiri</span></h2>
 		<h3><p>I'm  <span class="auto-input"></span></p></h3>
-		<a href="https://drive.google.com/file/d/1_9VVM1VVG3zRjSiI06c9FmBVpKOMFdFz/view?usp=sharing" target="_blank" class="btn">
+		<a href="./resources/TarunK_Resume.pdf" class="btn" download="">
 			<span></span>
         <span></span>
         <span></span>
@@ -389,6 +389,8 @@
 	<p>copyright © 2022 TARUN KOTAGIRI. All Rights Reserved.</p>
 </div>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="index.js">
+</script>
 <script type="text/javascript">
 // 	function sendEmail(){
 // 	console.log(document.getElementById('name').value);
@@ -397,22 +399,28 @@
 // 	console.log(document.getElementById('message').value);
 // }
 
-	function sendEmail(){
-		// event.preventDefault();
-		Email.send({
-			SecureToken: "dc1f4c33-9f56-493e-854a-dfe4d586f6e8",
-			name: document.getElementById('name').value,
-			// Host : "smtp.gmail.com",
-			// Username : "tarunkotagiri3007@gmail.com",
-			// Password : "thisisthepassword",
-			From : 'tarunkotagiri3007@gmail.com',
-			To : document.getElementById('email').value,
-			Subject : document.getElementById('subject').value,
-			Body : document.getElementById('message').value
-		}).then(
-			message => alert(message)
-		);
-	}
+	// function sendEmail(){
+	// 	// event.preventDefault();
+	// 	Email.send({
+	// 		// SecureToken: "a76a7fe8-1a19-4171-9ead-3e9e65fdde92",
+	// 		Host : "smtp.elasticemail.com",
+	// 		Port: 2525,
+	// 		Username : "tarunkotagiri3007@gmail.com",
+	// 		Password : "8854BA947C06A0864C5AC58ECE529278524A",
+	// 		From : 'tarunkotagiri3007@gmail.com',
+	// 		To : 'tarunkotagiri3007@gmail.com',
+	// 		Subject : document.getElementById('subject').value,
+	// 		Body : `
+	// 		Name: ${document.getElementById('name').value}
+	// 		Email: ${document.getElementById('email').value}			
+	// 		Message: ${document.getElementById('message').value}
+	// 		`
+	// 	}).then(
+	// 		message => alert(message)
+	// 	).catch(
+	// 		message => alert(message)
+	// 	);
+	// }
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
