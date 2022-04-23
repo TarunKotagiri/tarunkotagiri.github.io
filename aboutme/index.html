@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name = "viewport" content="width=device, initial-scale=1.0">
+    <meta name = "viewport" content="width=device, initial-scale=0.8">
 <meta charset="UTF-8">
 <title>TARUN KOTAGIRI</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -60,19 +60,7 @@
 	</div>
 </div>
 </section>
-<!-- Quotebox -->
-<!-- <section class="quotebox">
-	<div class="quote">
-		<div>
-			<div class="qbox box1">
-				<p>When Everything seems to be going against you, <br> Remember,<br> Tought times won't last.. Tough people do!
-				</p>
-				<h2>Robert H. Schuller</h2>
-			</div>
-			<div class="bg"></div>
-		</div>
-	</div>	
-</section> -->
+
 <section class="skills" id="skills">
 	<div class="heading">
 		<h2>My SKills</h2>
@@ -287,12 +275,69 @@
 
 </section>
 
+<section class="certificates" id="certificates">
+	<div class="heading">
+		<h2 style="font-family: 'Bebas Neue', cursive;">Certificates</h2>
+	</div>
+	<div class="cert">
+		<div class="container">
+			<div class="slide">
+				<div class="active"><img src="images/certs/bharat acharya.png" alt=""></div>
+				<div><img src="images/certs/ai.png" alt=""></div>
+				<div><img src="images/certs/cyber ibm.png" alt=""></div>
+				<div><img src="images/certs/sql.png" alt=""></div>
+				<div><img src="images/certs/cryptoknight.png" alt=""></div>
+				<div><img src="images/certs/ehcert.png" alt=""></div>
+				<div><img src="images/certs/sql_1.png" alt=""></div>
+				<div><img src="images/certs/webdevcert.png" alt=""></div>
+				<div><img src="images/certs/python.png" alt=""></div>
+			</div>
+			<div class="control">
+				<h2 class="next">Next</h2>
+				<h2 class="prev">Prev</h2>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.next').click(function(){
+					$('.slide').find('div.active').next().addClass('active');
+					$('.slide').find('div.active').prev().removeClass('active');
+				})
+				$('.prev').click(function(){
+					$('.slide').find('div.active').prev().addClass('active');
+					$('.slide').find('div.active').next().removeClass('active');
+				})
+			})
+		</script>
+	</div>
+</section>
 
+<!-- Quotebox -->
+<section class="quotebox">
+	<div class="container">
 
+			<h1 class="tarun">TARUN KOTAGIRI</h1>
+			<!-- <p>Get in touch</p> -->
+
+		<div class="quote">
+			<div>
+				<div class="qbox box1">
+					<p>When Everything seems to be going against you.. Remember,<br> Tought times won't last, But Tough people do!
+					</p>
+					<h2>Robert H. Schuller</h2>
+				</div>
+				<div class="bg"></div>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<!-- Contact Form-->
 <section class="contact" id="contact">
 	<div class="heading white">
 		<h2>Contact Me</h2>
-		<p>Get in touch</p>
+		<!-- <p>Get in touch</p> -->
 	</div>
 	<div class="content">
 		<div class="contactInfo">
@@ -322,7 +367,7 @@
 					</div>
 					<div class="text">
 							<h3>Email</h3>
-							<p>tarunKotagiri007@gmail.com</p>
+							<p>tarunKotagiri3007@gmail.com</p>
 					</div>
 				</div>
 			</div>
@@ -330,18 +375,46 @@
 		<div class="formBx">
 			<form>
 				<h3>Message Me</h3>
-				<input type="text" name="" placeholder="Full Name">
-						<input type="email" name="" placeholder="Email">
-						<textarea placeholder="Your Message"></textarea>
-						<input type="submit" value="Send">
+				<input type="text" id="name" placeholder="Full Name">
+				<input type="email" id="email" placeholder="Email">
+				<input type="text" id="subject" placeholder="Subject">
+				<textarea id="message" placeholder="Your Message"></textarea>
+				<input type="button" value="Send" onclick="sendEmail()">
+						<!-- <a href="mailto:tarunkotagiri3007@gmail.com" target="_blank">Send Email</a> -->
 			</form>
 		</div>
 	</div>
 </section>
 <div class="copyright">
-	<p>copyright © 2020 THE DEMONS DEN. All Rights Reserved.</p>
+	<p>copyright © 2022 TARUN KOTAGIRI. All Rights Reserved.</p>
 </div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+// 	function sendEmail(){
+// 	console.log(document.getElementById('name').value);
+// 	console.log(document.getElementById('email').value);
+// 	console.log(document.getElementById('subject').value);
+// 	console.log(document.getElementById('message').value);
+// }
 
+	function sendEmail(){
+		// event.preventDefault();
+		Email.send({
+			SecureToken: "dc1f4c33-9f56-493e-854a-dfe4d586f6e8",
+			name: document.getElementById('name').value,
+			// Host : "smtp.gmail.com",
+			// Username : "tarunkotagiri3007@gmail.com",
+			// Password : "thisisthepassword",
+			From : 'tarunkotagiri3007@gmail.com',
+			To : document.getElementById('email').value,
+			Subject : document.getElementById('subject').value,
+			Body : document.getElementById('message').value
+		}).then(
+			message => alert(message)
+		);
+	}
+
+</script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
 		var typed = new Typed(".auto-input", {
